@@ -13,6 +13,10 @@ The project is motivated by the idea that accessible technology might help peopl
 3. Do class weighting, focal loss, oversampling, architectural regularization, or a changed prediction threshold improve minority-class detection?
 4. How does removing exact duplicate rows and predictor patterns with conflicting labels affect the selected models?
 
+## Demo Video
+
+**YouTube presentation link:** [PASTE YOUR VIDEO LINK HERE]
+
 ## Dataset
 
 The project uses the **Diabetes Health Indicators** dataset published by Alex Teboul on Kaggle, based on the 2015 U.S. Behavioral Risk Factor Surveillance System (BRFSS).
@@ -31,27 +35,20 @@ The original CSV used in the main study contains **253,680 rows and 22 columns**
 
    `data/diabetes_012_health_indicators_BRFSS2015.csv`
 
-**Do not commit the raw dataset to GitHub.** The data is publicly available from Kaggle and should be obtained separately. The assignment asks for the zipped raw dataset in a Google Drive folder with viewer access; add the actual share link below when it is ready.
-
 ## Repository structure
 
-A recommended layout is:
-
 ```text
-project-root/
+diabets-risk-prediction/
 ├── README.md
 ├── requirements.txt
-├── notebooks/
-│   ├── 01_Diabetes_Health_Indicators_Classification_and_Evaluation.ipynb
-│   └── 02_Duplicate_and_Conflicting_Label_Sensitivity_Analysis.ipynb
+│── 01_Diabetes_Health_Indicators_Classification_and_Evaluation.ipynb
+│── 02_Duplicate_and_Conflicting_Label_Sensitivity_Analysis.ipynb
 ├── data/                         # local only; excluded from Git
 ├── results/                       # tables, figures, learning curves
 ├── results_deduplication/         # cleaning sensitivity outputs
 ├── saved_models/                  # selected original-data model artifacts
 └── saved_models_deduplicated/     # optional cleaned-data artifacts
 ```
-
-The filenames above are recommended names. Rename the current first notebook to the suggested `01_...ipynb` filename before committing if it is still called `notebook(1).ipynb`. Keep the two notebooks clearly separated: Notebook 1 reports the original-data experiments; Notebook 2 is a cleaning sensitivity study.
 
 ## Methods and experiments
 
@@ -95,7 +92,7 @@ Notebook 2 investigates removing records whose predictors repeat exactly with co
 
 ### 1. Create an environment
 
-Use a Python version supported by your installed TensorFlow release. The project was run in a Python 3.13 Linux environment; if TensorFlow installation fails in your environment, use a supported Python version listed by the TensorFlow installation documentation.
+Use a Python version supported by your installed TensorFlow release. The project was run in a Python 3.13 Linux environment; if TensorFlow installation fails in your environment, use a supported Python version listed by the TensorFlow installation documentation https://www.tensorflow.org/install .
 
 Example using `venv` on Linux:
 
@@ -114,28 +111,15 @@ jupyter notebook
 
 Open the notebooks and run cells from top to bottom. Set the dataset path in the data-loading cell if your CSV is located elsewhere. Set random seeds as specified in the notebooks. Keep the original train/validation/test split logic intact when reproducing original-data results.
 
-### 3. Weights & Biases
+### 3. Weights and Biases
 
-The notebooks use Weights & Biases (W&B) to record experiment configurations and metrics. If using online tracking, authenticate with W&B before running the experiment cells. For offline logging, set the relevant mode in the notebook to `offline`; synchronize runs later with:
+The notebooks use Weights and Biases (WandB) to record experiment configurations and metrics. If using online tracking, authenticate with WandB before running the experiment cells. For offline logging, set the relevant mode in the notebook to `offline`; synchronize runs later with:
 
 ```bash
 wandb sync wandb/
 ```
 
-Do not add API keys or secrets to the notebook or repository.
-
-## Saved artifacts and results
-
-Model files and generated result tables/figures are written into local output folders. Preserve these folders when making the final submission and provide the required saved model artifacts and zipped raw dataset through a Google Drive folder with **Anyone with the link can view** access, as required by the assignment. Do not commit the raw dataset or secrets to GitHub.
-
-## Links for submission
-
-Replace these placeholders with working links before final submission:
-
-- **GitHub repository:** `[ADD REPOSITORY URL]`
-- **Google Drive folder (raw data ZIP and saved model artifacts):** `[ADD DRIVE URL]`
-- **Weights & Biases project:** `[ADD W&B PROJECT URL]`
-- **Presentation video (5–10 minutes, face visible):** `[ADD VIDEO URL]`
+Do not add API keys or secrets to the notebook.
 
 ## Reproducibility and limitations
 
@@ -143,4 +127,6 @@ The notebooks document the data preparation, model configurations, and evaluatio
 
 ## Acknowledgements
 
-The project reuses a publicly available dataset from Kaggle based on CDC BRFSS 2015 data and uses open-source Python libraries including scikit-learn, TensorFlow/Keras, CatBoost, pandas, NumPy, Matplotlib, and Weights & Biases. No pretrained neural network was used in the experiments described here.
+The project reuses a publicly available dataset from Kaggle based on CDC BRFSS 2015 data and uses open-source Python libraries including scikit-learn, TensorFlow/Keras, CatBoost, pandas, NumPy, Matplotlib, and Weights and Biases. No pretrained neural network was used in the experiments described here.
+
+
