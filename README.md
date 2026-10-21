@@ -15,7 +15,7 @@ The project is motivated by the idea that accessible technology might help peopl
 
 ## Demo Video
 
-**YouTube presentation link:** [PASTE YOUR VIDEO LINK HERE]
+**Link to demo video:** https://www.youtube.com/watch?v=7CpLsjSJ1-I
 
 ## Dataset
 
